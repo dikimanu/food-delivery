@@ -1,0 +1,158 @@
+/* --- MAIN WRAPPER --- */
+.place-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  margin-top: 80px;
+  padding: 20px;
+  flex-wrap: nowrap; /* Stay side-by-side on desktop */
+}
+
+/* --- LEFT SECTION --- */
+.place-order-left {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.place-order-left .title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Default empty input = RED */
+.place-order-left input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #f40808; /* RED border when empty */
+  outline: none;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Filled input → GREEN */
+.place-order-left input:not(:placeholder-shown),
+.place-order-left input:valid {
+  border-color: rgb(5, 180, 2);
+  box-shadow: 0 0 5px rgba(29, 231, 10, 0.3);
+}
+
+/* Focus effect */
+.place-order-left input:focus {
+  box-shadow: 0 0 5px rgba(244, 8, 8, 0.3);
+}
+
+/* Two fields side by side */
+.multi-fields {
+  display: flex;
+  gap: 15px;
+}
+
+/* --- RIGHT SECTION (PAYMENT BOX) --- */
+.place-order-right {
+  width: 100%;
+  max-width: 420px;
+}
+
+.cart-total {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cart-total h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.cart-total hr {
+  border: none;
+  height: 1px;
+  background: #eee;
+  margin: 10px 0;
+}
+
+/* Checkout button */
+.cart-total button {
+  margin-top: 25px;
+  padding: 14px 20px;
+  background: rgb(3, 169, 3);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.cart-total button:hover {
+  background: rgb(5, 114, 5);
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* MOBILE (Stack layout) */
+@media (max-width: 768px) {
+  .place-order {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 10px;
+  }
+
+  .multi-fields {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .place-order-left,
+  .place-order-right {
+    max-width: 100%;
+  }
+
+  .place-order-left .title {
+    font-size: 24px;
+  }
+
+  .cart-total h2 {
+    font-size: 22px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+  .place-order-left,
+  .cart-total {
+    padding: 20px;
+  }
+
+  .place-order-left input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cart-total button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}

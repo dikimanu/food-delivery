@@ -1,0 +1,133 @@
+/* ---------------------------------------- */
+/* HEADER MAIN SECTION */
+/* ---------------------------------------- */
+
+.header {
+  height: 34vw;
+  margin: 30px auto;
+  background: url('/header_img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+
+  /* Smooth parallax-type movement */
+  transform: translateZ(0);
+  will-change: background-position;
+}
+
+/* Cinematic gradient overlay */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.65)
+    ),
+    rgba(87, 45, 13, 0.35);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* ---------------------------------------- */
+/* CONTENT INSIDE HEADER */
+/* ---------------------------------------- */
+
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.7vw;
+  max-width: 50%;
+  bottom: 12%;
+  left: 6vw;
+  z-index: 2;
+  animation: fadeSlideIn 1.4s ease forwards;
+  opacity: 0;
+}
+
+/* Title Text */
+.header-contents h2 {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: max(4.8vw, 28px);
+  letter-spacing: 1px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Subtitle */
+.header-contents p {
+  color: #f1f1f1;
+  font-size: max(1.4vw, 15px);
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* CTA Button */
+.header-contents button {
+  border: none;
+  padding: 1.1vw 3vw;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffffff, #fef4ef);
+  color: #333;
+  font-size: max(1vw, 15px);
+  transition: 0.35s ease;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+.header-contents button:hover {
+  background: tomato;
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 90, 60, 0.45),
+              0 0 15px rgba(255, 166, 140, 0.6);
+  transform: translateY(-4px);
+}
+
+/* ---------------------------------------- */
+/* ANIMATION */
+/* ---------------------------------------- */
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------------------------------------- */
+/* RESPONSIVE DESIGN */
+/* ---------------------------------------- */
+
+@media (max-width: 768px) {
+  .header {
+    height: 65vw;
+  }
+
+  .header-contents {
+    max-width: 85%;
+    bottom: 10%;
+    gap: 15px;
+  }
+
+  .header-contents h2 {
+    font-size: 8vw;
+  }
+
+  .header-contents p {
+    font-size: 14px;
+  }
+
+  .header-contents button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}

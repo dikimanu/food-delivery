@@ -1,0 +1,144 @@
+.footer {
+  background: linear-gradient(145deg, #141414, #1c1c1c);
+  color: #f2f2f2;
+  padding: 70px 8vw 35px 8vw;
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-top: 2px solid rgba(255, 255, 255, 0.03);
+}
+
+/* MAIN GRID */
+.footer-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 90px;
+  align-items: start;
+}
+
+/* -------------- LEFT SECTION -------------- */
+
+.footer-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-content-left img {
+  width: 150px;
+  filter: drop-shadow(0 0 8px rgba(255, 99, 71, 0.25));
+}
+
+.footer-content-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d2d2d2;
+  max-width: 420px;
+}
+
+/* SOCIAL ICONS */
+.footer-social-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-social-icons img {
+  width: 42px;
+  background: #222;
+  padding: 8px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-social-icons img:hover {
+  transform: scale(1.12) translateY(-3px);
+  background: tomato;
+  box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
+}
+
+/* -------------- CENTER + RIGHT -------------- */
+
+.footer-content-center,
+.footer-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-content-center h2,
+.footer-content-right h2 {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  border-left: 4px solid tomato;
+  padding-left: 10px;
+}
+
+.footer-content-center ul,
+.footer-content-right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-content-center li,
+.footer-content-right li {
+  list-style: none;
+  cursor: pointer;
+  color: #cfcfcf;
+  transition: 0.25s ease;
+  font-size: 0.95rem;
+}
+
+.footer-content-center li:hover,
+.footer-content-right li:hover {
+  color: tomato;
+  transform: translateX(4px);
+}
+
+/* -------------- HR + COPYRIGHT -------------- */
+
+.footer hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+  margin: 25px 0;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+  letter-spacing: 0.5px;
+}
+
+/* -------------- RESPONSIVE -------------- */
+
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-content-left img {
+    width: 130px;
+  }
+
+  .footer-content-left p {
+    font-size: 0.9rem;
+  }
+
+  .footer-social-icons img {
+    width: 36px;
+  }
+}
