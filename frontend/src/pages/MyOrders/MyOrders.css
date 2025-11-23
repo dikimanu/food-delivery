@@ -1,0 +1,122 @@
+.my-orders {
+  padding: 40px 5%;
+  font-family: "Poppins", sans-serif;
+  min-height: 80vh;
+}
+
+.my-orders h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Orders Container */
+.my-orders .container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Empty message */
+.empty-text {
+  font-size: 18px;
+  color: #777;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Each Order Card */
+.my-orders-order {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto auto auto;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid #eee;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.my-orders-order:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Order Icon */
+.my-orders-order img {
+  width: 50px;
+}
+
+/* Items List */
+.my-orders-order p {
+  margin: 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Status Dot */
+.status-dot {
+  color: #ff0000; /* green dot */
+  font-size: 16px;
+}
+
+/* Track Button */
+.track-btn {
+  padding: 8px 16px;
+  background: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+  white-space: nowrap;
+}
+
+.track-btn:hover {
+  background: #e63c3c;
+}
+
+/* ----------------------------
+   RESPONSIVE DESIGN
+----------------------------- */
+@media (max-width: 900px) {
+  .my-orders-order {
+    grid-template-columns: 50px 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    text-align: left;
+    padding: 14px 18px;
+  }
+
+  .my-orders-order img {
+    grid-row: span 3;
+  }
+
+  .track-btn {
+    grid-column: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .my-orders-order {
+    grid-template-columns: 45px 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .track-btn {
+    grid-column: 1 / span 2;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .my-orders h2 {
+    font-size: 24px;
+  }
+}

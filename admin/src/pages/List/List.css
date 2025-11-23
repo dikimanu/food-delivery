@@ -1,0 +1,132 @@
+/* ----------- GENERAL LAYOUT ----------- */
+
+.list {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list > p {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+/* ----------- TABLE CONTAINER ----------- */
+
+.list-table {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+
+.list-table:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ----------- TABLE ROW FORMAT ----------- */
+
+.list-table-format {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 120px 60px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #e6e6e6;
+  transition: background 0.2s ease;
+}
+
+.list-table-format:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* ----------- HEADERS ----------- */
+
+.title {
+  font-weight: bold;
+  color: #222;
+  border-bottom: 2px solid #444;
+  padding-bottom: 10px;
+}
+
+/* ----------- IMAGE STYLE ----------- */
+
+.list-table-format img {
+  width: 65px;
+  height: 65px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  transition: transform 0.25s ease;
+}
+
+.list-table-format img:hover {
+  transform: scale(1.07);
+}
+
+/* ----------- DELETE BUTTON ----------- */
+
+.cursor {
+  color: #ff3b3b;
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cursor:hover {
+  color: #d60000;
+  transform: scale(1.25);
+}
+
+/* ----------- RESPONSIVE ----------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .list-table-format {
+    grid-template-columns: 60px 1fr 1fr;
+    grid-template-areas:
+      "image name delete"
+      "image category price";
+    row-gap: 8px;
+  }
+
+  .list-table-format img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .list-table-format p:nth-child(2) { grid-area: name; font-size: 18px; }
+  .list-table-format p:nth-child(3) { grid-area: category; opacity: 0.8; }
+  .list-table-format p:nth-child(4) { grid-area: price; font-weight: bold; }
+  .list-table-format p:nth-child(5) { grid-area: delete; }
+
+  .title {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .list {
+    padding: 15px;
+  }
+
+  .list-table {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .list-table-format img {
+    width: 48px;
+    height: 48px;
+  }
+}
